@@ -6,7 +6,4 @@ class Node
         @data = data
     end 
 
-
-
-
 end 
