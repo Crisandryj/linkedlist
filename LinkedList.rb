@@ -1,4 +1,4 @@
-require_relative 'node'
+require_relative 'Node'
 
 class LinkedList
 
@@ -11,7 +11,11 @@ class LinkedList
             new_node = Node.new(value)
             if @head == nil
                 @head = new_node
-            elsif @
+            elsif @head != nil
+                    @tail = new_node
+                    @tail.next_node = nil
+            end 
+
             
         end
     
@@ -59,4 +63,9 @@ class LinkedList
 
 end 
 
+new = LinkedList.new("go","5")
 
+
+new.append(5)
+
+p new
