@@ -24,10 +24,20 @@ class LinkedList
   end
 
   # size returns the total number of nodes in the list
-  def size; end
+  def size
+    count = 0
+    current_counter = @head
+    until current_counter = nil
+      count += 1
+      current_counter = current_counter.next_node
+    end 
+    count
+  end
 
   # head returns the first node in the list
-  def head; end
+  def head
+  
+  end
 
   # tail returns the last node in the list
   def tail; end
