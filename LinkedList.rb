@@ -41,11 +41,19 @@ class LinkedList
 
   # at(index) returns the node at the given index
   def at(index)
-  
+  counter = 0
+  current_node = @head
+  until counter = index
+    current_node = @head.next_node
+    count +=1
+  end
+  current_node
   end
 
   # pop removes the last element from the list
-  def pop; end
+  def pop
+
+  end
 
   # contains?(value) returns true if the passed in value is in the list and otherwise returns false.
   def contains?; end
