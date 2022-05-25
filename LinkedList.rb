@@ -2,7 +2,7 @@ require_relative 'Node'
 
 class LinkedList
 
-    def initialize (head,tail)
+    def initialize (head = nil,tail= nil)
         @head = head
         @tail = tail
     end 
@@ -63,7 +63,7 @@ class LinkedList
 
 end 
 
-new = LinkedList.new("go","5")
+new = LinkedList.new("go")
 
 
 new.append(5)
