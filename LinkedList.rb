@@ -66,21 +66,25 @@ class LinkedList
     current_node = @head
     contains = false
     until current_node.nil?
-      current_node = current_node.next_node
       contains = true if current_node == value
+      current_node = current_node.next_node
     end 
     contains
   end
 
   # find(value) returns the index of the node containing value, or nil if not found.
-  def find; end
+  def find(value)
+    current_node = @head
+    count = 0
+    until current_node.data == value
+      current_node = current_node.next_node
+      count += 1
+      return if nil 
+    end 
+    
+  end
 
   # to_s represent your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> nil
   def to_s; end
+
 end
-
-new = LinkedList.new('go')
-
-new.append(5)
-
-p new
