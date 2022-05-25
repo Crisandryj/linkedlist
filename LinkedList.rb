@@ -9,12 +9,7 @@ class LinkedList
   # adds a new node containing value to the end of the list
   def append(value)
     new_node = Node.new(value)
-    if @head.nil?
-      @head = new_node
-    elsif !@head.nil?
-      @tail = new_node
-      @tail.next_node = nil
-    end
+
   end
 
   # prepend(value) adds a new node containing value to the start of the list
@@ -36,14 +31,18 @@ class LinkedList
 
   # head returns the first node in the list
   def head
-  
+  @head
   end
 
   # tail returns the last node in the list
-  def tail; end
+  def tail
+    @tail
+  end
 
   # at(index) returns the node at the given index
-  def at; end
+  def at(index)
+  
+  end
 
   # pop removes the last element from the list
   def pop; end
