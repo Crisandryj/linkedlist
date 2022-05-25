@@ -52,11 +52,18 @@ class LinkedList
 
   # pop removes the last element from the list
   def pop
-
+    nil if size < 1
+    current_node = @head
+    until current_node.next_node = nil
+      current_node = current_node.next_node
+    end 
+    @tail = current_node
+    @tail.next_node = nil
   end
 
   # contains?(value) returns true if the passed in value is in the list and otherwise returns false.
-  def contains?; end
+  def contains?
+  end
 
   # find(value) returns the index of the node containing value, or nil if not found.
   def find; end
