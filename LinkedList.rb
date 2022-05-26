@@ -17,7 +17,7 @@ class LinkedList
     else
       @tail.next_node = new_node
     end
-    @tail = new_node
+      @tail = new_node
   end
 
   # prepend(value) adds a new node containing value to the start of the list
@@ -30,7 +30,7 @@ class LinkedList
   def size
     count = 0
     current_counter = @head
-    until current_counter = nil
+    until current_counter.nil?
       count += 1
       current_counter = current_counter.next_node
     end
@@ -45,14 +45,14 @@ class LinkedList
       current_node = @head.next_node
       count += 1
     end
-    current_node
+    p current_node.data
   end
 
   # pop removes the last element from the list
   def pop
     nil if size < 1
     current_node = @head
-    current_node = current_node.next_node until current_node.next_node = nil
+    current_node = current_node.next_node until current_node.next_node == nil
     @tail = current_node
     @tail.next_node = nil
   end
@@ -62,7 +62,7 @@ class LinkedList
     current_node = @head
     contains = false
     until current_node.nil?
-      contains = true if current_node == value
+      contains = true if current_node.data == value
       current_node = current_node.next_node
     end
     contains
@@ -74,7 +74,6 @@ class LinkedList
     count = 0
     until current_node.data == value
       return if nil
-
       current_node = current_node.next_node
       count += 1
       count
@@ -90,4 +89,25 @@ class LinkedList
     end
     print nil
   end
+
+  def insert_at(value,index)
+    if index == 0
+      prepend(value)
+    else 
+      
+
+
+
 end
+
+list = LinkedList.new()
+
+list.append("hey")
+
+list.append("yo")
+
+list.prepend("yo")
+
+p list.pop
+
+
