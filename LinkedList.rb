@@ -45,7 +45,7 @@ class LinkedList
       current_node = @head.next_node
       count += 1
     end
-    p current_node.data
+    current_node
   end
 
   # pop removes the last element from the list
@@ -94,10 +94,10 @@ class LinkedList
     if index == 0
       prepend(value)
     else 
-      
-
-
-
+      new_node = Node.new(value, at(index))
+      previous_node = at(index -1)
+      previous_node.next_node = new_node
+      @tail = new_node if new_node.next_node.nil?
 end
 
 list = LinkedList.new()
