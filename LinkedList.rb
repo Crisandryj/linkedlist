@@ -1,6 +1,8 @@
 require_relative 'Node'
 
 class LinkedList
+  attr_reader :head, :tail
+
   def initialize(head = nil, tail = nil)
     @head = head
     @tail = tail
@@ -9,6 +11,13 @@ class LinkedList
   # adds a new node containing value to the end of the list
   def append(value)
     new_node = Node.new(value)
+    @head ||= new_node
+    if !@tail
+      @tail = new_node
+    else
+      @tail.next_node = new_node
+    end
+    @tail = new_node
   end
 
   # prepend(value) adds a new node containing value to the start of the list
@@ -27,12 +36,6 @@ class LinkedList
     end
     count
   end
-
-  # head returns the first node in the list
-  attr_reader :head
-
-  # tail returns the last node in the list
-  attr_reader :tail
 
   # at(index) returns the node at the given index
   def at(index)
