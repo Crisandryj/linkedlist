@@ -77,14 +77,21 @@ class LinkedList
     current_node = @head
     count = 0
     until current_node.data == value
+      return if nil 
       current_node = current_node.next_node
       count += 1
-      return if nil 
+      count
     end 
-    
   end
 
   # to_s represent your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> nil
-  def to_s; end
+  def to_s
+    current_node = @head
+    until current_node.nil?
+      print "( #{current_node.data} ) -> "
+      current_node = current_node.next_node
+  end
+   print nil
+  end
 
 end
