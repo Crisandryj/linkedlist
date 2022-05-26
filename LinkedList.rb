@@ -11,13 +11,12 @@ class LinkedList
   # adds a new node containing value to the end of the list
   def append(value)
     new_node = Node.new(value)
-    @head ||= new_node
-    if !@tail
+    if @head.nil?
+      new_node = Node.new(value,@tail)
+      @head = new_node
+      else 
       @tail = new_node
-    else
-      @tail.next_node = new_node
-    end
-      @tail = new_node
+     end
   end
 
   # prepend(value) adds a new node containing value to the start of the list
@@ -91,6 +90,8 @@ class LinkedList
   end
 
   def insert_at(value,index)
+    return p "Error: index exceeded list" if index > size
+
     if index == 0
       prepend(value)
     else 
@@ -98,6 +99,10 @@ class LinkedList
       previous_node = at(index -1)
       previous_node.next_node = new_node
       @tail = new_node if new_node.next_node.nil?
+    end
+  end
+
+
 end
 
 list = LinkedList.new()
@@ -106,8 +111,8 @@ list.append("hey")
 
 list.append("yo")
 
-list.prepend("yo")
+list.append("yo")
 
-p list.pop
+p list.to_s
 
 
