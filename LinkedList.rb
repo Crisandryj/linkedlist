@@ -11,13 +11,11 @@ class LinkedList
   # adds a new node containing value to the end of the list
   def append(value)
     new_node = Node.new(value)
-    if @head.nil?
-      new_node = Node.new(value,@tail)
-      @head = new_node
-      else 
-      @tail = new_node
-     end
+    @head ||= new_node
+    @tail.next_node = new_node if @tail 
+    @tail = new_node
   end
+
 
   # prepend(value) adds a new node containing value to the start of the list
   def prepend(value)
@@ -111,7 +109,7 @@ list.append("hey")
 
 list.append("yo")
 
-list.append("yo")
+list.append("yoo")
 
 p list.to_s
 
