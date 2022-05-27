@@ -101,12 +101,4 @@ class LinkedList
   end
 end
 
-list = LinkedList.new
 
-list.append('hey')
-
-list.append('yo')
-
-list.append('yoo')
-
-p list.to_s
