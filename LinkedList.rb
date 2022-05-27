@@ -99,6 +99,7 @@ class LinkedList
       @tail = new_node if new_node.next_node.nil?
     end
   end
+
 end
 
 
